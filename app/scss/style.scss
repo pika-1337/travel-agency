@@ -1,0 +1,222 @@
+@font-face{
+  font-family: 'SegoeUI';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: local('SegoeUI'),
+      url('../fonts/SegoeUI.woff2') format('woff2'),
+      url('../fonts/SegoeUI.woff') format('woff'),
+}
+@font-face{
+  font-family: 'SegoeUI';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: local('SegoeUI-SemiBold'),
+      url('../fonts/SegoeUI-SemiBold.woff2') format('woff2'),
+      url('../fonts/SegoeUI-SemiBold.woff') format('woff'),
+}
+@font-face{
+  font-family: 'SegoeUI';
+  font-weight: 700;
+  font-style: normal; 
+  font-display: swap;
+  src: local('SegoeUI-Bold'),
+      url('../fonts/SegoeUI-Bold.woff2') format('woff2'),
+      url('../fonts/SegoeUI-Bold.woff') format('woff'),
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+// == MIXIN ==
+@mixin serif{
+  font-family: 'Serif', sans-serif;
+}
+
+@mixin segoe{
+  font-family: 'SegoeUI';
+}
+@mixin list-null {
+  margin: 0; 
+  padding: 0;
+  list-style: none;
+}
+// == /MIXIN ==
+
+// == VARIABLES ==
+$base: 4px;
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semibold: 600;
+$fw-bold: 700;
+
+$padding-vertical-xs: $base * 5;
+$padding-vertical-sm: $base * 15;
+$padding-vertical: $base * 30;
+
+$fs-sm:12px;
+$fs-md:15px;
+$fs-lg:18px;
+$fs-xl:48px;
+
+$transition: .2s;
+
+
+$color-white: #fff;
+
+$color-black:#222222;
+
+$color-dark:#2A3950;
+
+// == /VARIABLES ==
+
+// == COMMON ==
+
+body {
+  background-color: $color-white;
+}
+
+.section-inner {
+  max-width: 1620px;
+  margin: 0 auto;
+  padding-top: $padding-vertical;
+  padding-bottom: $padding-vertical;
+}
+
+.btn {
+  @include segoe;
+
+  padding: $base*3 $base*11 ;
+  display: inline-block;
+  margin: 0;
+  font-size: $fs-sm;
+  font-weight: $fw-bold;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: $base*2;
+  transition: $transition;
+  box-sizing: border-box;
+
+    &--dark {
+    color: $color-white;
+    background-color: #2A3950;
+
+    &:hover{
+      background-color: darken( #2A3950, 5%);
+    }
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  @include segoe();
+  margin: 0;
+  padding: 0;
+  font-weight: $fw-regular;
+  // color: $color-dark;
+}
+
+
+// == /COMMON ==
+
+// == HEADER ==
+.section-header {
+  @include segoe();
+  background-color: $color-white;
+
+  .section-inner {
+    padding-top: $padding-vertical-xs;
+    padding-bottom: $padding-vertical-xs;
+  }
+  
+  .main-navigation {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      text-decoration: none;
+
+      &-info {
+        &-title {
+          font-size: 36px;
+          font-weight: $fw-semibold;
+          color: rgba(0, 171, 230, 1);
+          span {
+            color: rgba(42, 57, 80, 1);
+          }
+        }
+        &-text {
+          font-size: 9px;
+          color: $color-dark;
+        }
+      }
+    }
+    .header-list {
+      @include list-null();
+      display: flex;
+      margin-left: auto;
+      &-item {
+        display: flex;
+        padding: 0 25px;
+        &:not(:first-child){
+        padding-left: $base*9;
+        border-left: 2px solid #006270 ;
+        
+      }
+        &-info {
+          margin-left: 10px;
+          &-title {
+            font-size: 18px;
+            line-height: 24px;
+            color: #2a3950;
+            font-weight: $fw-semibold;
+          }
+          &-text {
+            font-size: 12px;
+            color: #2a3950;
+            line-height: 16px;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+// == /HEADER ==
+
+// == section ==
+.section-explore {
+  padding-bottom: 500px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .explore-theme {
+    display: block;
+      color: #006270;
+    text-align: center;
+    &-title {
+      @include serif();
+      font-size: 84px;
+      line-height: 112%;
+      margin: 0 auto;
+      width: 50%;
+      margin-bottom: 20px;
+    }
+    &-text {
+      @include segoe();
+      width: 50%;
+      font-size: 20px;
+      margin: 0 auto;
+      line-height: 27px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+
+// == /section ==
+
