@@ -189,7 +189,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-h3 {
+h3, .title-standart {
   @include serif();
   font-size: 50px;
   line-height: 69px;
@@ -268,7 +268,7 @@ h5 {
       }
     }
     &-text {
-      font-size: 9px;
+      font-size: 13px;
       color: $color-dark;
     }
   }
@@ -311,7 +311,7 @@ h5 {
             font-weight: $fw-semibold;
           }
           &-text {
-            font-size: 12px;
+            font-size: 14px;
             color: $color-dark;
             line-height: 16px;
             margin: 0;
@@ -396,8 +396,6 @@ h5 {
   .best-offers {
     &-text {
       padding-bottom: 130px;
-      h2 {
-      }
       .text {
         width: 55%;
         margin: 0 auto;
@@ -705,9 +703,6 @@ h5 {
   background-image: url(/images/flights/flights-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
-  .section-inner {
-    padding-bottom: $padding-vertical*4;
-  }
   .flights-box {
     display: flex;
     margin: 0 auto;
@@ -766,9 +761,6 @@ h5 {
 // == newsletter ==
 .section-newsletter {
   background-color: $color-dark;
-  .section-inner {
-    
-  }
   .newsletter-journey {
     background-image: url(/images/journey/line-bg.png);
     background-repeat: no-repeat;
@@ -784,8 +776,6 @@ h5 {
         height: 107px;
         left: 0;
       }
-      .newsletter-journey-car-img {
-    }
   }
   .newsletter-join {
     background-color: #006270;
@@ -821,7 +811,10 @@ h5 {
 
 // == footer ==
 .section-footer {
+  @include segoe();
+  font-weight: $fw-regular;
   background-color: #006270;
+
 
   .footer-box {
     display: flex;
@@ -837,6 +830,7 @@ h5 {
         line-height: 32px;
         margin-bottom: 25px;
         color: $color-white;
+        font-weight: $fw-semibold;
         &:hover {
           transition: $transition;
           color: darken($color-white, 20%)
@@ -849,6 +843,7 @@ h5 {
         text-decoration: none;
         line-height: 29px;
         margin-bottom: 10px;
+        font-size: 22px;
         &:hover {
           transition: $transition;
           color: darken($color-white, 20%)
@@ -882,6 +877,7 @@ h5 {
       color: $color-cyan;
       line-height: 32px;
       font-size: 24px;
+
       opacity: 0.7;
     }
   }
